@@ -29,4 +29,29 @@ let myObj = {
 const myFunction = function(){
     console.log("Hello world");
 }
-console.log(typeof(outsideTemp)); //>object
+console.log(typeof(outsideTemp)); //>object 
+
+
+
+//++++++++++++++++++MEMORYY++++++++++++++++++++++
+// Stack memory(Primitive){COPY VALUE MILTI HAI}, Heap memory(Non-Primitive){ORIGINAL VALUE MILTI HAI}
+let myYoutubechannelname = "studyr"
+
+let anothername = myYoutubechannelname
+anothername = "himanshujivlog"
+
+console.log(myYoutubechannelname);
+console.log(anothername);
+
+let userOne = {
+    email:"user@google.com",
+    upi:"user@ybl"
+}
+
+let userTwo =  userOne
+
+userTwo.email = "yodhawarrior@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
+
