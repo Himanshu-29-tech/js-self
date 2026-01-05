@@ -8,24 +8,25 @@ const scoreValue = 100.3
 
 const isLoggedIn = false
 const outsideTemp = null
-let userEmail;
+let userEmail;//undefined
 
 const id = Symbol('123')
 const anotherId = Symbol('123')
 
 console.log(id == anotherId);
 
-const bigNumer = 345675325293534989n
+const bigNumer = 345675325293534989n//last me  n lga do
 
 
 //Reference (Non primitive)
+
 //Array,Objects,functions
 
-const heroes = ["Shaktiman","naagraj","doga"]
+const heroes = ["Shaktiman","naagraj","doga"]//square bracket 
 let myObj = {
     name: "himanshu",
     age: 19,
-}
+}//{} bracket
 const myFunction = function(){
     console.log("Hello world");
 }
