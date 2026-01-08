@@ -54,3 +54,38 @@ console.log(Object.values(tinderuser1));
 console.log(Object.entries(tinderuser1));
 
 console.log(tinderuser1.hasOwnProperty('isLoggedIn'));
+
+const course = {
+    coursename : "js by himanshu",
+    price: "999",
+    courseInstructor: "himanshu"
+}
+
+//course.courseInstructor
+
+const{courseInstructor} = course
+const{courseInstructor:instructor} = course//if you want to give short form
+console.log(courseInstructor);
+console.log(instructor);
+
+//+++++++++API+++++++++++
+//API - whenever you need to delegate something to others then you use API
+// in easy words"JAB KABHI APNA KAAM KISI AUR SE KARWANA HO TO API USE KRTE HAI
+//+++++++json+++++
+
+
+
+
+
+
+// {
+//     "name": "himanshu",//keys and value both are in string
+//     "coursename": "js in hindi",
+//     "price": "free"
+// }
+
+[
+    {},
+    {},
+    {}
+]
