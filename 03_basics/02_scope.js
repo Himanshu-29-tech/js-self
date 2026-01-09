@@ -64,7 +64,22 @@ if (true) {
 
  const addTwo = function(num){
     return num + 2
-}       addTwo(num: any):
-        any
-addTwo()
+}       
+addTwo(5)
+ 
+
+ console.log(addone(5))
+
+function addone(num){
+    return num + 1
+ }
+
+
+// addTwo(5)
+//  const addTwo = function(num){
+//     return num + 2
+// }                 
+
+// it's give error because we declare addTwo after calling it. and we store the function in a variable. so at the time of calling it's not defined yet.
+
  
