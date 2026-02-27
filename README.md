@@ -1,4 +1,4 @@
-![Profile Views](https://img.shields.io/badge/daily_streak-🔥_ON_FIRE-red)
+![Streak](https://streak-stats.demolab.com?user=Himanshu-29-tech&theme=radical&fire=DD2727)
 
 # js-self
 First time learn javascript with help of mister H (Himanshu).
