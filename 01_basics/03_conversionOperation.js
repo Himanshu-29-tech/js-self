@@ -6,7 +6,7 @@
  // both are same and give same result 
 
 let valueInNumber = Number(score) //change the string value to int
- console.log(typeof valueInNumber);
+console.log(typeof valueInNumber);
 console.log(valueInNumber);
 
 /*
