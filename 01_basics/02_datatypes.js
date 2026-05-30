@@ -1,33 +1,42 @@
- "use strict;"// treat all js code as newer version
+ "use strict";
 
- 
-// alert(3 + 3) // we are using nodejs, not browser
+/*  
+Strict mode = Strict teacher 😃
+Bina strict — galtiyan ignore hoti hain
+Strict ke saath — har galti pakdi jaati hai
+*/
 
-console.log(3 + 3)//code readebility should be high
- 
+console.log(3 + 3)
 console.log("Himanshu")
 
+let name = "Himanshu"   // string
+let age = 18            // number
+let isLoggedIn = false  // boolean
 
-let name = "Himanshu" //string value
-let age = 18 //int
-let isLoggedIn = false //boolean value
+/*
+================================================================
+JavaScript ke 7 Primitive Data Types:
+Data Type  ||  Example          ||  Matlab
+================================================================
+String     ||  "Himanshu"       ||  Text
+Number     ||  18               ||  2^53 tak
+BigInt     ||  9999999999999999n||  Bahut bada number
+Boolean    ||  true / false     ||  Haan ya Naa
+null       ||  null             ||  Jaanbujhkar khaali rakha
+undefined  ||  let x;           ||  Value di hi nahi
+Symbol     ||  Symbol("id")     ||  Hamesha unique value
+================================================================
+*/
 
+console.log(typeof "himanshu");  // string
+console.log(typeof age);         // number
+console.log(typeof null);        // object ⚠️ (purana bug)
+console.log(typeof undefined);   // undefined
 
-//number => 2 to power 53
-// bigint
-// string => ""
-// boolean => true/false
-//null => standalone value 
-// undefined => 
-// symbol => unique
-
-
-//object
-
-console.log(typeof "himanshu");
-console.log(typeof age);
-console.log(typeof null); // object
-console.log(typeof undefined); //undefined
-
-
-
+/*
+null -->> object kyun?
+Purane JS mein null object tha
+Ab fix ho gaya hai internally
+Par change nahi kar sakte — 
+poori duniya ka code toot jaayega! 😅
+*/
