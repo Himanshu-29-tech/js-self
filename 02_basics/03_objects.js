@@ -61,3 +61,19 @@ jsUser.greetingTwo();
 
 */
 
+
+
+
+//=====================================================
+//          ARRAY vs OBJECT
+//=====================================================
+//  Feature         Array           Object
+//-----------------------------------------------------
+//  Syntax          []              {}
+//  Access          index (0,1,2)   key (name,age)
+//  Order           ✅ Ordered      ❌ No order
+//  Use case        List of items   One item's details
+//  typeof          "object" ⚠️     "object" ⚠️
+//  Check karo      isArray()✅     isArray()❌
+//  Loop            map,filter      Object.keys()
+//=====================================================
