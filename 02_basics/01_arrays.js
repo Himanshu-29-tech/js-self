@@ -68,6 +68,23 @@ Kaam                        Sirf copy      ||     Kaat ke nikalo
 ===========================================================================
 
 
+===========================================================================
+Quick Reference — Saare Methods:
+
+===========================================================================
+Method           ||    Kaam             || Original Badlta?
+===========================================================================
+push()           ||    End mein add✅   || Haan
+pop()            ||    End se remove✅  || Haan
+unshift()        ||    Start mein add✅ || Haan
+shift()          ||    Start se remove✅|| Haan
+includes()       ||    Check karo❌     || Nahi
+indexOf()        ||    Position batao❌ || Nahi
+join().          ||    String banao❌   || Nahi
+slice()          ||    Copy nikalo❌    || Nahi
+splice()         ||    Kaat ke nikalo✅ || Haan
+
+===========================================================================
 
 
 */
