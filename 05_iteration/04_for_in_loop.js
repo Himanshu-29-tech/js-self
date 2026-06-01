@@ -1,9 +1,9 @@
-// for in loops
-// ⬇ ️ ️ ️ ️️
-// | Loop       | What it gives      | Use when                              |
-// | ---------- | ------------------ | ------------------------------------- |
-// | `for...in` | **keys / indexes** | Objects, when you need property names |
-// | `for...of` | **values**         | Arrays, strings, when you need items  |
+for in loops
+⬇ ️ ️ ️ ️️
+| Loop       | What it gives      | Use when                              |
+| ---------- | ------------------ | ------------------------------------- |
+| `for...in` | **keys / indexes** | Objects, when you need property names |
+| `for...of` | **values**         | Arrays, strings, when you need items  |
 
 
 const myObject = {
@@ -12,21 +12,23 @@ const myObject = {
     rb: "ruby",
     swift: "swift by apple"
 }
+/*
+---->>>>>> syntax <<<<<<<----
 
-// syntax
+for (const key in object) {
+    if (!Object.hasOwn(object, key)) continue;
+    
+    const element = object[key];    
+}
+*/
 
-// for (const key in object) {
-//     if (!Object.hasOwn(object, key)) continue;
-    
-//     const element = object[key];
-    
-    
-// }
 
 for (const key in myObject) {
     console.log(`${key} shortcut is for ${myObject[key]}`);
 }
 
+
+// example 
 const programming = ["js", "rb", "py", "java", "cpp"]
 
 for (const key in programming) {
@@ -34,7 +36,7 @@ for (const key in programming) {
 }
 
 
-// for in loop in map 
+//=============== for in loop in map ==================
 
 const map = new Map()
 map.set("IN", "India")
