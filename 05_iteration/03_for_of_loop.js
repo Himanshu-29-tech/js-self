@@ -56,6 +56,6 @@ const myObject = {
 
 // map are iterable, but for object there's another methods
 
-// for (const [key, value ] of myObject) {
-//     console.log(key, ':-', value); 
-// } 
+for (const [key, value ] of myObject) {
+    console.log(key, ':-', value); 
+} 
