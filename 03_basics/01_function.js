@@ -7,7 +7,7 @@ console.log("S");
 console.log("H");
 console.log("U");
 //you can't write it again and again
-
+// Function -- ek bar likho baar baar use kro 
 function sayMyName(){//declare (function) it's a keyword after {write function code that;s to be executed} 
 console.log("H");
 console.log("I");
@@ -18,7 +18,9 @@ console.log("S");
 console.log("H");
 console.log("U");
 }
- sayMyName()//callingbthe function 
+ sayMyName()//calling the function 
+
+ //============================= Return ==============================
 
  function addTwoNumbers(number1,number2){//when we use some words with function def are called parameters
     console.log(number1+number2);
@@ -49,7 +51,7 @@ function addTwoNumbers2(number1,number2){
 
 
 
-
+//============== Deafult/Missing arguments ===================
 
 function loginUserMessage(username){
     return`${username} just logged in`
@@ -89,3 +91,21 @@ function returnSecondValue(getArray){
 console.log(returnSecondValue(myNewArray));
 console.log(returnSecondValue([200,400,500,1000]));
 
+//=====================================================
+//           FUNCTIONS QUICK REFERENCE
+//=====================================================
+//  Kaam                    Syntax
+//-----------------------------------------------------
+//  Declare              — function name(){}
+//  Call                 — name()
+//  Parameters           — function name(a, b){}
+//  Arguments            — name(1, 2)
+//  Return               — return value
+//  Default value        — function name(a = "default")
+//  Rest operator        — function name(...args)
+//  Object pass          — name(obj) / name({key:val})
+//  Array pass           — name(arr) / name([1,2,3])
+//=====================================================
+//  console.log() only  — undefined milega ⚠️
+//  return ke saath     — value milegi    ✅
+//=====================================================
