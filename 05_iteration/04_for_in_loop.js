@@ -1,10 +1,13 @@
-for in loops
+/*
+=============== for in loops =================
+
+
 ⬇ ️ ️ ️ ️️
 | Loop       | What it gives      | Use when                              |
 | ---------- | ------------------ | ------------------------------------- |
 | `for...in` | **keys / indexes** | Objects, when you need property names |
 | `for...of` | **values**         | Arrays, strings, when you need items  |
-
+*/
 
 const myObject = {
     js: "javascript",
