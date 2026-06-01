@@ -15,7 +15,7 @@
  const temperature = 42
 
  if( temperature === 40){// if condition will be true it's will be executed
-    consolre.log("less than 50");
+    console.log("less than 50");
 }
 else { // if first condition will be false then it's will be executed
     console.log("temperature is greater than 50");
