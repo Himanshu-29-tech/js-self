@@ -1,16 +1,17 @@
- // for each loop
+/*
+=================== for each loop =====================
 
-// 👉 Used to go through every item in an array one by one.
-// 👉 It runs a function for each element.
-// Think: “Do this work for every item in the list”
+👉 Used to go through every item in an array one by one.
+👉 It runs a function for each element.
+Think: “Do this work for every item in the list”
 
-// syntax
+syntax
 
-// array.forEach(call back function) => {     // call back function has no any name
+array.forEach(call back function) => {     // call back function has no any name
     
-// });
+});
  
- 
+*/
  
 const coding = ["js", "ruby" , "java" , "python" , "cpp"]
 
