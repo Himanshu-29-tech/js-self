@@ -1,10 +1,12 @@
-// while Loop
+/*
+====================== while Loop ==================================
 
-// syntax
+syntax
 
-// while (condition) {
+while (condition) {
     
-// }
+}
+*/
 
 let index = 0   // declare a variable
 while (index <= 10) { // while loop with valid condition
@@ -12,23 +14,24 @@ while (index <= 10) { // while loop with valid condition
     index = index + 2 // incrimination 
 }
 
-//💁 IN FOR LOOPS ---->>>> 
-// for (let index = 0; index < 10; index++) {      //---->>>>  first write >>> for >>>> declaration of variable >>>> condition >>>> incrimination >>>>{ print statement  }
-//   const element = index;
-//   console.log(element);
-// }
+/*
+💁 IN FOR LOOPS ---->>>> 
+for (let index = 0; index < 10; index++) {      //---->>>>  first write >>> for >>>> declaration of variable >>>> condition >>>> incrimination >>>>{ print statement  }
+  const element = index;
+  console.log(element);
+}
 
 
-//💁 IN WHILE LOOPS ---->>>> 
-// let index = 0                        //---->>>> first declaration of variable >>>> while >>>>> condition >>>> {print statement}  >>>> incrimination
-// while (index <= 10) { 
-//     console.log(`value of index is ${index}`); 
-//     index = index + 2 
+💁 IN WHILE LOOPS ---->>>> 
+let index = 0                        //---->>>> first declaration of variable >>>> while >>>>> condition >>>> {print statement}  >>>> incrimination
+while (index <= 10) { 
+    console.log(`value of index is ${index}`); 
+    index = index + 2 
 
 
+*/
 
-
-//  array in while loop
+//============>>>>   array in while loop  <<<<<<<<<<==============
 
 let myArray = ['flash', "batman" , "superman"]
 
@@ -38,15 +41,17 @@ while (arr < myArray.length){
     arr = arr + 1
 }
 
+/*
+--->>>>>> Do while Loop >>>>>>-----
 
-// --->>>>>> Do while Loop >>>>>>-----
+syntax
 
-// syntax
-
-// do {            >>>>> first do his work
+do {            >>>>> first do his work
     
-// } while (condition);         >>>>>> then condition will be checked
+} while (condition);         >>>>>> then condition will be checked
 
+*/
+    
 let score = 1 
 
 do {
