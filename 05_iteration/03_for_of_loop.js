@@ -1,15 +1,16 @@
-// for of 
+//======================== for of ========================== 
+/*
 
-//["","",""] // we can put object inside the array
-//[{},{},{}]
+["","",""] // we can put object inside the array
+[{},{},{}]
 
 
-// syntax --->>
+syntax --->>
 
-// for (const element of object) {
+for (const element of object) {
     
-// }
-
+}
+*/
 const arr = [1, 2, 3, 4, 5]
 
 for (const num of arr) {
@@ -25,7 +26,7 @@ for (const  greet of  greetings) {
 
 
 
-// Maps
+//================== Maps ========================
 
 
 // no any duplicates values,all are unique value
