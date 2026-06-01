@@ -1,18 +1,22 @@
-//  for loop
+ /*
+ ======================= for loop ==========================
 
-// syntax
+syntax
 
-// for (let index = 0; index < array.length; index++) {
-//     const element = array[index];
+for (let index = 0; index < array.length; index++) {
+    const element = array[index];
     
-// }
+}
 
-// --->>>> let index = 0 ------->>> declare a variable
-// --->>>> index < array.length ------>>> a condition
-// --->>>> index++.  -------->>>> incrimitatin
-// --->>>> {const element = array[index]}    ------>>>>execution scope
+--->>>> let index = 0 ------->>> declare a variable
+--->>>> index < array.length ------>>> a condition
+--->>>> index++  -------->>>> incrimitation
+--->>>> {const element = array[index]}    ------>>>>execution scope
 
 
+*/
+
+// Example
 for (let index = 0; index < 10; index++) {
     const element = index;
     console.log(element);
@@ -28,7 +32,7 @@ for (let i = 0; i <= 10; i++) {
     
 }
 
-//+++++++++++++ NESTING OF LOOPS++++++++
+//===================== NESTING OF LOOPS ===============================
 for (let i = 0; i <= 10; i++){
     console.log(`Outer loop value: ${i}`);
     for (let j = 0; j <= 10; j++ ){
@@ -46,7 +50,7 @@ for(let k = 0; k <= 10; k++) {
 }
 
 
-// Arrays in for loop
+//==================== Arrays in for loop =======================
 
 let myArray = ["flash", "batman" , "superman"]
 console.log(myArray.length);
