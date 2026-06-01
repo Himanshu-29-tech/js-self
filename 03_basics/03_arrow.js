@@ -7,16 +7,16 @@ const user = {
     }
 }
 
-user.welcomeMessage()
-user.username = "samkaran"
-user.welcomeMessage()
+user.welcomeMessage() // Himanshu welcome to website
+user.username = "samkaran" // change the username
+user.welcomeMessage() // samkaran welcome to website
 
 
 
 
 function chai(){
     let username = "Himu"
-    console.log(this.username);//undefined you can't used this for a function only used in the object.
+    console.log(this.username);//undefined you can't used this for a function only used in the object
 }
 
 chai()
@@ -29,6 +29,7 @@ chai()
 // }
 // chai()//undefined
 
+// normal function me this global object hota hai 
 
 //++++++++++Arrow function+++++++++
 const chai1 =  () => { // function ko hatakar bracket ke baad arrow lga do
