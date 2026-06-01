@@ -1,12 +1,12 @@
  const userEmail = "himanshu@ji.ai"
 
  if (userEmail) {
-    console.log("Got user email");//it's will br executed when there's some value on userEmail or its [] empty  array
+    console.log("Got user email");//it's will be executed when there's some value on userEmail or its [] empty  array
  } else {
     console.log("Don't have user email");// it's will be executed when there's no userEmail
 }
 
-// falsey values
+// falsy values
 
 // false, 0 , -0 , BigInt 0n , "" , null , undefined, NaN(NOt a Number)
 
@@ -34,10 +34,10 @@ if (Object.keys(emptyObj).length == 0) {
 // Otherwise → use the original value ✅
 
 let val1;
-val1 = 5 ?? 10
-val1 = null ?? 10
+val1 = 5 ?? 10  // 5    — value hai, backup nahi lega ✅
+val1 = null ?? 10  // 10   — null hai, backup lega ✅
 
-console.log(val1);
+console.log(val1); // 10
 
 
 // Terniary Operator
@@ -45,3 +45,30 @@ console.log(val1);
 
 const iceTeaprice = 100 
 iceTeaprice >= 80 ? console.log("les than 80"): console.log("more than 80")
+
+
+
+
+/*
+
+=======================================================
+   TRUTHY/FALSY + ?? + TERNARY QUICK REFERENCE
+=======================================================
+ FALSY:  false, 0, -0, 0n, "", null, undefined, NaN
+ TRUTHY: "0", "false", " ", [], {}, function(){}
+=======================================================
+ EMPTY CHECK:
+ Array  — arr.length === 0
+ Object — Object.keys(obj).length === 0
+=======================================================
+ NULLISH COALESCING ??
+ null ?? "backup"      → "backup"
+ undefined ?? "backup" → "backup"
+ 0 ?? "backup"         → 0       ← 0 valid hai! ✅
+ "" ?? "backup"        → ""      ← "" valid hai! ✅
+=======================================================
+ TERNARY:
+ condition ? "true case" : "false case"
+=======================================================
+
+*/
