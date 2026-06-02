@@ -10,7 +10,7 @@ const newNums1 = myNumbers1.map( (num) => { return num + 10 }) //---> it's retur
 console.log(newNums1);
 
 
-//++++++CHAINING FUNCTION+++++++
+//========================== CHAINING FUNCTION ===========================
 
 const newNums2 = myNumbers
                 .map((num) => num * 10 )
