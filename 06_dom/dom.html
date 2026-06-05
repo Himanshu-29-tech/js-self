@@ -1,22 +1,192 @@
 <!-- DOM-Document object model -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    
-    <title>DOM learning</title>
-    <style>
-        .bgcolor{
-            background-color: rgb(11, 11, 11);
-            color: white;
-        }
-    </style>
-</head>
-<body class ="bgcolor">
-    <div>
-        <h1 id = "title" class = "heading">DOM learning with self </h1>
-        <p>Lorem ipsum dolor sit amet. </p>
-    </div>
-</body>
-</html>
+//=======================================================
+//                    DOM EXPLAINED
+//           Document Object Model — by Himanshu
+//=======================================================
+
+//=======================================================
+// 1. DOM KYA HAI?
+//=======================================================
+// Browser HTML ko padhta hai aur ek TREE bana deta hai!
+// Is tree ko hum JavaScript se control kar sakte hain!
+
+//              DOCUMENT
+//                 |
+//               <html>
+//              /       \
+//          <head>      <body>
+//            |        /     \
+//         <title>   <h1>    <p>
+//            |        |      |
+//         "Page"   "Hello" "World"
+
+//=======================================================
+// 2. ELEMENT SELECT KARNA — 5 TARIKE
+//=======================================================
+
+document.getElementById("myId")              // id se — ek element
+document.getElementsByClassName("myClass")   // class se — saare elements
+document.getElementsByTagName("h1")          // tag se — saare elements
+document.querySelector(".myClass")           // css selector — pehla element
+document.querySelectorAll(".myClass")        // css selector — saare elements
+
+//=======================================================
+// 3. CONTENT CHANGE KARNA
+//=======================================================
+
+const heading = document.querySelector("h1")
+
+heading.innerHTML   = "<b>Himanshu</b>"  // HTML tags bhi likh sakte ✅
+heading.innerText   = "Himanshu"         // sirf visible text
+heading.textContent = "Himanshu"         // saara text, hidden bhi
+
+//  innerHTML    — HTML tags set kar sakte    ✅
+//  innerText    — sirf visible text          ✅
+//  textContent  — saara text, hidden bhi     ✅
+
+//=======================================================
+// 4. STYLE CHANGE KARNA
+//=======================================================
+
+heading.style.color           = "red"
+heading.style.backgroundColor = "yellow" // ⚠️ camelCase — background-color nahi!
+heading.style.fontSize        = "30px"
+heading.style.display         = "none"   // hide karo
+heading.style.display         = "block"  // show karo
+
+// ⚠️ CSS     → background-color
+// ⚠️ JS mein → backgroundColor  — camelCase hota hai!
+
+//=======================================================
+// 5. CLASS ADD/REMOVE KARNA
+//=======================================================
+
+const box = document.querySelector(".box")
+
+box.classList.add("active")       // class add karo          ✅
+box.classList.remove("active")    // class remove karo       ✅
+box.classList.toggle("active")    // hai toh hatao, nahi toh lagao 🔄
+box.classList.contains("active")  // check karo — true/false
+
+//=======================================================
+// 6. ELEMENT BANANA AUR ADD KARNA
+//=======================================================
+
+const newDiv = document.createElement("div")  // naya element banao
+newDiv.innerHTML = "Himanshu"                  // content daalo
+newDiv.id        = "myDiv"                     // id do
+newDiv.classList.add("myClass")                // class do
+
+document.body.appendChild(newDiv)              // body ke end mein   ⬇️
+document.body.prepend(newDiv)                  // body ke start mein ⬆️
+document.querySelector(".container").appendChild(newDiv) // kisi ke andar
+
+//=======================================================
+// 7. ELEMENT HATANA
+//=======================================================
+
+const element = document.querySelector("h1")
+
+element.remove()                            // seedha hatao        ✅
+element.parentNode.removeChild(element)     // parent se hatao
+
+//=======================================================
+// 8. ATTRIBUTES — GET AUR SET KARNA
+//=======================================================
+
+const img = document.querySelector("img")
+
+img.getAttribute("src")              // src ki value lo
+img.setAttribute("src", "new.jpg")   // src set karo
+img.setAttribute("alt", "My Image")  // alt set karo
+
+img.src = "new.jpg"                  // direct bhi kar sakte ✅
+img.alt = "My Image"
+
+//=======================================================
+// 9. EVENTS — CLICK, HOVER, ETC.
+//=======================================================
+
+const btn = document.querySelector("button")
+
+// ✅ Best tarika — addEventListener
+btn.addEventListener("click", function(){
+    console.log("Button click hua!")
+})
+
+// Arrow function se bhi
+btn.addEventListener("click", () => {
+    console.log("Button click hua!")
+})
+
+//  Common Events:
+//  click      — click kiya
+//  dblclick   — double click
+//  mouseover  — mouse upar aaya
+//  mouseout   — mouse bahar gaya
+//  keydown    — key dabai
+//  keyup      — key chodi
+//  submit     — form submit
+//  change     — value badli
+//  load       — page load hua
+
+//=======================================================
+// 10. EVENT OBJECT — e
+//=======================================================
+
+btn.addEventListener("click", function(e){
+    console.log(e)           // poora event object
+    console.log(e.target)    // kis element pe click hua
+    console.log(e.target.id) // us element ki id
+    console.log(e.type)      // "click"
+    e.preventDefault()       // default action rokta hai ✅
+})
+
+//=======================================================
+//                  QUICK REFERENCE
+//=======================================================
+//  SELECT:
+//  getElementById("id")          → ek element by id
+//  getElementsByClassName("c")   → saare by class
+//  querySelector("css")          → pehla by css selector
+//  querySelectorAll("css")       → saare by css selector
+//-------------------------------------------------------
+//  CONTENT:
+//  innerHTML  = "<b>text</b>"    → HTML ke saath
+//  innerText  = "text"           → sirf visible text
+//  textContent = "text"          → saara text
+//-------------------------------------------------------
+//  STYLE:
+//  style.color = "red"           → color change
+//  style.backgroundColor= "red"  → background — camelCase ⚠️
+//  style.display = "none"        → hide
+//  style.display = "block"       → show
+//-------------------------------------------------------
+//  CLASS:
+//  classList.add("c")            → add
+//  classList.remove("c")         → remove
+//  classList.toggle("c")         → toggle    🔄
+//  classList.contains("c")       → check
+//-------------------------------------------------------
+//  CREATE/ADD/DELETE:
+//  createElement("div")          → banao
+//  appendChild(el)               → end mein lagao   ⬇️
+//  prepend(el)                   → start mein lagao ⬆️
+//  remove()                      → hatao
+//-------------------------------------------------------
+//  EVENTS:
+//  addEventListener("click", fn) → event lagao      ✅
+//  e.preventDefault()            → default rokao    🛑
+//=======================================================
+
+//  GOLDEN RULES:
+//  1. querySelector → CSS selector use karta hai #id .class ✅
+//  2. CSS background-color → JS backgroundColor camelCase  ⚠️
+//  3. classList.toggle → hai toh hatao nahi toh lagao       🔄
+//  4. addEventListener → best tarika events ke liye         ✅
+//  5. e.preventDefault → default action rokta hai           🛑
+
+//=======================================================
+//                  END OF DOM
+//=======================================================
