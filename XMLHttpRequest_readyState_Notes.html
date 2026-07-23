@@ -1,1 +1,220 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>XMLHttpRequest&period;readyState</title>
+            <style>
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
 
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="xmlhttprequestreadystate">XMLHttpRequest.readyState</h1>
+<p>The <strong><code>readyState</code></strong> property tells you the current state of an
+<strong>XMLHttpRequest (XHR)</strong> while it is processing an HTTP request.</p>
+<h2 id="states">States</h2>
+<h3 id="0-----unsent">0 --- UNSENT</h3>
+<ul>
+<li>XHR object has been created.</li>
+<li><code>open()</code> has <strong>not</strong> been called yet.</li>
+</ul>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> xhr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(xhr.<span class="hljs-property">readyState</span>); <span class="hljs-comment">// 0</span>
+</code></pre>
+<hr>
+<h3 id="1-----opened">1 --- OPENED</h3>
+<ul>
+<li><code>open()</code> has been called.</li>
+<li>Request is configured.</li>
+<li>You can now call <code>send()</code>.</li>
+</ul>
+<pre><code class="language-javascript">xhr.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;https://example.com&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(xhr.<span class="hljs-property">readyState</span>); <span class="hljs-comment">// 1</span>
+</code></pre>
+<hr>
+<h3 id="2-----headers_received">2 --- HEADERS_RECEIVED</h3>
+<ul>
+<li><code>send()</code> has been called.</li>
+<li>Response headers and HTTP status are available.</li>
+</ul>
+<p>Available properties: - <code>xhr.status</code> - <code>xhr.statusText</code> -
+<code>xhr.getAllResponseHeaders()</code></p>
+<hr>
+<h3 id="3-----loading">3 --- LOADING</h3>
+<ul>
+<li>Browser is downloading the response.</li>
+<li><code>responseText</code> contains <strong>partial</strong> data.</li>
+<li>This state may occur multiple times.</li>
+</ul>
+<p>Useful for: - Download progress - Streaming responses</p>
+<hr>
+<h3 id="4-----done">4 --- DONE</h3>
+<ul>
+<li>Request has finished (success or failure).</li>
+<li>Full response is available.</li>
+</ul>
+<pre><code class="language-javascript"><span class="hljs-keyword">if</span> (xhr.<span class="hljs-property">readyState</span> === <span class="hljs-number">4</span> &amp;&amp; xhr.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(xhr.<span class="hljs-property">responseText</span>);
+}
+</code></pre>
+<hr>
+<h2 id="request-lifecycle">Request Lifecycle</h2>
+<pre><code class="language-text">Create XMLHttpRequest
+        ↓
+0 → UNSENT
+        ↓
+open()
+        ↓
+1 → OPENED
+        ↓
+send()
+        ↓
+2 → HEADERS_RECEIVED
+        ↓
+3 → LOADING
+        ↓
+4 → DONE
+</code></pre>
+<h2 id="interview-questions">Interview Questions</h2>
+<p><strong>Q. Which state means <code>open()</code> has been called?</strong><br>
+<strong>Answer:</strong> <code>1 (OPENED)</code></p>
+<p><strong>Q. Which state means the request is complete?</strong><br>
+<strong>Answer:</strong> <code>4 (DONE)</code></p>
+<p><strong>Q. At which state can you read the HTTP status code?</strong><br>
+<strong>Answer:</strong> <code>2 (HEADERS_RECEIVED)</code></p>
+<p><strong>Q. At which state is the full response available?</strong><br>
+<strong>Answer:</strong> <code>4 (DONE)</code></p>
+<p><strong>Q. Which state may occur multiple times?</strong><br>
+<strong>Answer:</strong> <code>3 (LOADING)</code></p>
+<h2 id="memory-trick">Memory Trick</h2>
+<pre><code>State Meaning
+</code></pre>
+<hr>
+<pre><code>    0 Object Created
+    1 Opened
+    2 Headers Received
+    3 Loading
+    4 Done
+</code></pre>
+<p><strong>Mnemonic:</strong> <strong>Create → Open → Headers → Loading → Done</strong></p>
+
+            
+            
+        </body>
+        </html>
